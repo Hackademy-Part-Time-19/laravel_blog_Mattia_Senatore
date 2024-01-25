@@ -32,29 +32,18 @@
 </head>
 
 <body>
-    <h1>{{$titolo}}</h1>
-    <ul>
-        <li><a href="{{ route('contatti') }}">Contatti</a></li>
-        <li><a href="{{ route('welcome') }}">Welcome</a></li>
-        <li><a href="{{ route('articoli') }}">Articoli</a></li>
-    </ul>
-
-    <div class="container">
-        <div class="row">
-            @foreach ($articoli as $chiave=>$articolo)
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$articolo['title']}}</h5>
-                        <h6 class="card-category">{{$articolo['category']}}</h6>
-                        
-                        <a href="{{ route('ArtCompleto',['id' => $chiave])}}">Articolo Completo</a>
-                    </div>
+  <h5 style="text-align: center;"><a href="{{ route('articoli') }}">Articoli</a></h5>
+    
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{$articolo['title']}}</h5>
+                    <h6 class="card-category">{{$articolo['category']}}</h6>
+                    <p class="card-description">{{$articolo['description']}}</p>
+                    
                 </div>
+
             </div>
-            @endforeach
-        </div>
-    </div>
+          
 </body>
 
 </html>
