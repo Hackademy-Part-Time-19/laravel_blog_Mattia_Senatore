@@ -1,6 +1,8 @@
 <?php
 
 //use Illuminate\Foundation\Application;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 //use Inertia\Inertia;
 
@@ -52,3 +54,6 @@ Route::get('/articoli/{id}', function($id) {
 
     return view('pages.dettaglio', ['articolo' => $articoli[$id], ]);
 })->name('ArtCompleto');
+
+
+Route::post('/contatti/invio', [Controller::class,'RiceviInformazioni'])->name('contacts.informazioni');
